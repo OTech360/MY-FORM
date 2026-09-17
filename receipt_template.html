@@ -1,0 +1,94 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OTECHMULTIVENTUERS LTD â€” Receipt</title>
+  <style>
+    :root { --ink:#152b45; --accent:#0d7a6e; --line:#b7c2cf; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#eef2f5; color:#1f2933; font:14px Arial, sans-serif; }
+    .receipt { width:210mm; min-height:297mm; margin:18px auto; padding:16mm; background:white; box-shadow:0 3px 18px #0002; }
+    header { display:flex; align-items:center; border-bottom:3px solid var(--accent); padding-bottom:14px; }
+    .logo { width:84px; height:84px; object-fit:contain; margin-right:17px; }
+    h1 { margin:0; color:var(--ink); font-size:25px; letter-spacing:.5px; }
+    .rc { margin:6px 0 0; color:#52616f; font-weight:bold; }
+    .receipt-title { margin-left:auto; color:var(--accent); font-size:28px; font-weight:800; letter-spacing:2px; }
+    .details { display:grid; grid-template-columns:1fr 1fr; gap:12px 35px; margin:23px 0 25px; }
+    .field { display:flex; border-bottom:1px solid var(--line); min-height:29px; align-items:flex-end; }
+    .label { font-weight:bold; color:var(--ink); white-space:nowrap; margin-right:9px; }
+    .blank { flex:1; min-height:24px; }
+    table { width:100%; border-collapse:collapse; }
+    th { background:var(--ink); color:#fff; text-align:left; padding:10px 8px; font-size:12px; letter-spacing:.3px; }
+    td { height:39px; border:1px solid var(--line); padding:8px; }
+    th:nth-child(2), th:nth-child(3), th:nth-child(4), td:nth-child(2), td:nth-child(3), td:nth-child(4) { text-align:center; }
+    .totals { width:280px; margin:19px 0 0 auto; }
+    .total-line { display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding:9px 4px; }
+    .grand { border-bottom:3px solid var(--accent); color:var(--ink); font-size:16px; font-weight:bold; }
+    .signatures { display:grid; grid-template-columns:1fr 1fr; gap:58px; margin-top:67px; }
+    .signature-box { position:relative; height:78px; border-bottom:1px solid #34495e; }
+    .signature-box svg { position:absolute; width:155px; height:70px; bottom:-3px; left:12px; }
+    .signature-label { margin-top:7px; color:#52616f; font-size:12px; }
+    footer { margin-top:45px; border-top:1px solid var(--line); padding-top:11px; color:#52616f; font-size:12px; text-align:center; }
+    @media print { body { background:white; } .receipt { margin:0; box-shadow:none; } }
+  </style>
+</head>
+<body>
+  <main class="receipt">
+    <header>
+      <img class="logo" src="otech-logo.jfif" alt="OTECHMULTIVENTUERS LTD logo">
+      <section>
+        <h1>OTECHMULTIVENTUERS LTD</h1>
+        <p class="rc">RC No: 9262060</p>
+      </section>
+      <div class="receipt-title">RECEIPT</div>
+    </header>
+
+    <section class="details">
+      <div class="field"><span class="label">Customer Name:</span><span class="blank"></span></div>
+      <div class="field"><span class="label">Receipt No.:</span><span class="blank"></span></div>
+      <div class="field"><span class="label">Address / Phone:</span><span class="blank"></span></div>
+      <div class="field"><span class="label">Date:</span><span class="blank"></span></div>
+    </section>
+
+    <table aria-label="Goods purchased">
+      <thead><tr><th style="width:8%">S/N</th><th>Description of Goods</th><th style="width:14%">Quantity</th><th style="width:20%">Amount (â‚¦)</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td></td><td></td><td></td></tr>
+        <tr><td>2</td><td></td><td></td><td></td></tr>
+        <tr><td>3</td><td></td><td></td><td></td></tr>
+        <tr><td>4</td><td></td><td></td><td></td></tr>
+        <tr><td>5</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <section class="totals">
+      <div class="total-line"><span>Subtotal</span><span>â‚¦</span></div>
+      <div class="total-line grand"><span>Total Amount</span><span>â‚¦</span></div>
+    </section>
+
+    <section class="signatures">
+      <div>
+        <div class="signature-box">
+          <!-- Supplied authorised-signature mark, reproduced for printing. -->
+          <svg viewBox="0 0 200 90" aria-label="Authorised signature">
+            <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke-width="5" d="M25 70 C0 42 20 5 72 12 C103 8 135 15 171 39 C197 57 192 75 174 77 C133 78 96 70 65 74 C36 81 22 76 25 56 C28 42 58 39 82 50 C105 61 84 81 46 72"/>
+              <path stroke-width="6" d="M64 88 C68 53 77 13 91 6 C107 -4 115 7 107 30 C99 52 116 65 137 51"/>
+              <path stroke-width="4" d="M37 39 L170 43 M35 57 L175 59"/>
+            </g>
+          </svg>
+        </div>
+        <div class="signature-label">Authorised Signature</div>
+      </div>
+      <div>
+        <div class="signature-box"></div>
+        <div class="signature-label">Customer Signature</div>
+      </div>
+    </section>
+
+    <footer>Thank you for your patronage.</footer>
+  </main>
+</body>
+</html>
+

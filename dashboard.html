@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OTECHMULTIVENTUERS LTD | Invoices</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="otech-logo.jfif" alt="OTECH logo">
+      <span>OTECH<span class="brand-muted">BILLING</span></span>
+    </div>
+    <nav>
+      <button class="nav-item active" data-view="dashboard"><span>â–¦</span> Dashboard</button>
+      <button class="nav-item" data-view="invoice"><span>â–¤</span> New invoice</button>
+      <button class="nav-item" data-view="invoices"><span>â—«</span> Saved invoices</button>
+    </nav>
+    <div class="business-card"><strong>OTECHMULTIVENTUERS LTD</strong><small>RC No: 9262060</small></div>
+  </aside>
+
+  <main>
+    <header class="topbar"><div><p class="eyebrow">BUSINESS BILLING</p><h1 id="page-title">Dashboard</h1></div><button class="primary" id="new-invoice">+ Create invoice</button></header>
+
+    <section id="dashboard" class="view active">
+      <div class="welcome"><div><h2>Good day!</h2><p>Create professional invoices, collect optional customer signatures, and keep a simple record of sales.</p></div><button class="light-button" id="welcome-new">Create an invoice â†’</button></div>
+      <div class="stat-grid">
+        <article class="stat"><p>INVOICES SAVED</p><strong id="stat-count">0</strong><span>All time</span></article>
+        <article class="stat"><p>TOTAL INVOICED</p><strong id="stat-total">â‚¦0.00</strong><span>All saved invoices</span></article>
+        <article class="stat"><p>LATEST INVOICE</p><strong id="stat-latest">â€”</strong><span>Generated automatically</span></article>
+      </div>
+      <section class="panel"><div class="panel-header"><div><h2>Recent invoices</h2><p>Your latest saved records appear here.</p></div><button class="text-button" data-go="invoices">View all</button></div><div id="recent-list" class="invoice-list empty">No invoices saved yet.</div></section>
+    </section>
+
+    <section id="invoice" class="view">
+      <div class="invoice-toolbar"><button class="back-button" data-go="dashboard">â† Dashboard</button><div><button class="secondary" id="save-draft">Save invoice</button><button class="primary" id="print-invoice">Print / PDF</button></div></div>
+      <div class="invoice-sheet">
+        <div class="invoice-head"><div class="company"><img src="otech-logo.jfif" alt="OTECH logo"><div><h2>OTECHMULTIVENTUERS LTD</h2><p>RC No: 9262060</p></div></div><div class="invoice-word">INVOICE</div></div>
+        <div class="form-grid"><label>Customer name<input id="customer-name" placeholder="Enter customer name"></label><label>Invoice number<input id="invoice-number" readonly></label><label>Customer phone / address<input id="customer-contact" placeholder="Optional"></label><label>Invoice date<input id="invoice-date" type="date"></label></div>
+        <div class="items-heading"><h3>Goods or services</h3><button class="text-button" id="add-row">+ Add item</button></div>
+        <div class="table-wrap"><table><thead><tr><th>DESCRIPTION</th><th>QTY</th><th>UNIT PRICE (â‚¦)</th><th>AMOUNT (â‚¦)</th><th></th></tr></thead><tbody id="items"></tbody></table></div>
+        <div class="invoice-bottom"><div><label class="notes-label">Notes<textarea id="notes" placeholder="Payment terms or a thank-you note"></textarea></label><label class="signature-toggle"><input type="checkbox" id="signature-required"> Request customer signature</label></div><div class="totals"><div><span>Subtotal</span><b id="subtotal">â‚¦0.00</b></div><div class="total"><span>Total</span><b id="total">â‚¦0.00</b></div></div></div>
+        <div id="signature-section" class="signature-section hidden"><div><h3>Customer signature <small>(optional)</small></h3><p>The customer can sign directly on this device before you save or print.</p></div><div><canvas id="signature-pad" aria-label="Customer signature pad"></canvas><div class="signature-actions"><span>Customer signature</span><button class="text-button" id="clear-signature">Clear signature</button></div></div></div>
+        <div class="authorised"><div class="auth-mark">Authorised signature</div><div class="signature-line">Customer signature</div></div>
+      </div>
+    </section>
+
+    <section id="invoices" class="view"><div class="section-title"><div><h2>Saved invoices</h2><p>Invoices are saved in this browser on this device.</p></div><button class="primary" data-go="invoice">+ Create invoice</button></div><div id="saved-list" class="saved-list"></div></section>
+  </main>
+  <template id="row-template"><tr><td><input class="description" placeholder="Item description"></td><td><input class="quantity" type="number" min="0" value="1"></td><td><input class="price" type="number" min="0" step="0.01" placeholder="0.00"></td><td class="amount">â‚¦0.00</td><td><button class="remove-row" title="Remove item">Ã—</button></td></tr></template>
+  <script src="dashboard.js"></script>
+</body>
+</html>
+
