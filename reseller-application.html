@@ -7,6 +7,7 @@
   <title>Become an OTECH Reseller</title>
   <link rel="stylesheet" href="reseller-form.css">
   <link rel="stylesheet" href="ceo-profile.css">
+  <link rel="stylesheet" href="document-uploads.css">
 </head>
 <body>
   <main class="page-shell">
@@ -23,7 +24,7 @@
       <div class="ceo-copy"><p class="eyebrow">MEET THE FOUNDER</p><h2 id="ceo-title">Stephen Emmanuel</h2><p class="role">Founder &amp; CEO, OTECHMULTIVENTURES LTD</p><p>Stephen is an AI Instructor, Automation Specialist, Data Analyst, and founder of OTECH. A Computer Science graduate with a foundation in Computer Engineering, he specializes in Artificial Intelligence, Generative AI, automation, data analysis, and web development.</p><p>Through the NextGen AI Bootcamp and OTECH, he equips students, young professionals, and entrepreneurs with practical technology skills to build real-world projects and prepare for careers in technology and innovation.</p><div class="expertise"><span>AI &amp; Generative AI</span><span>Automation</span><span>Data Analysis</span><span>Tech Education</span></div></div>
     </section>
 
-    <form id="reseller-form" action="https://formsubmit.co/otechmultiventures@gmail.com" method="POST">
+    <form id="reseller-form" action="https://formsubmit.co/otechmultiventures@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="New OTECH Reseller Application">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
@@ -66,6 +67,7 @@
       <section class="form-step" data-title="Your application">
         <div class="section-heading"><span>05</span><div><h2>Complete your application</h2><p>We’re almost done.</p></div></div>
         <div class="form-grid"><label class="full">Why do you want to become an OTECH reseller? <b>*</b><textarea name="Reason for applying" required rows="5" placeholder="Tell us what motivates you."></textarea></label><label class="full">What can you bring to the OTECH reseller network? <textarea name="Contribution to reseller network" rows="4" placeholder="Optional"></textarea></label><label>How did you hear about this opportunity? <b>*</b><select name="How applicant heard about opportunity" required><option value="" selected disabled>Select one</option><option>WhatsApp</option><option>Facebook</option><option>Instagram</option><option>TikTok</option><option>Friend/Referral</option><option>OTECH Staff</option><option>Existing OTECH Customer</option><option>Other</option></select></label><label>Who referred you? <input name="Referrer" placeholder="Optional"></label></div>
+        <fieldset class="documents"><legend>Supporting documents <b>*</b></legend><p>Upload clear copies of the documents below. The combined file size must not exceed 10 MB.</p><div class="form-grid"><label>Résumé / CV <b>*</b><input id="resume" name="Resume or CV" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required><small>PDF, DOC, or DOCX</small></label><label>Passport photograph <b>*</b><input id="passport-photo" name="Passport photograph" type="file" accept="image/jpeg,image/png,.jpg,.jpeg,.png" required><small>JPG or PNG</small></label><label class="full">NIN slip <b>*</b><input id="nin-slip" name="NIN slip" type="file" accept="image/jpeg,image/png,application/pdf,.jpg,.jpeg,.png,.pdf" required><small>Clear JPG, PNG, or PDF. Only share documents you are authorized to provide.</small></label></div><p id="upload-status" class="upload-status" aria-live="polite"></p></fieldset>
         <label class="declaration"><input type="checkbox" name="Declaration accepted" value="Yes" required><span>I confirm that the information I have provided is accurate and that I am genuinely interested in becoming an OTECH MULTIVENTURES LTD Product Reseller. I understand that my application will be reviewed and that reseller approval, pricing, terms, product availability and other conditions will be determined by OTECH MULTIVENTURES LTD. <b>*</b></span></label>
       </section>
 

@@ -23,7 +23,16 @@ function checkboxGroupsValid(step) {
 function validCurrentStep() {
   const inputs = [...steps[current].querySelectorAll('input, select, textarea')];
   for (const input of inputs) { if (!input.checkValidity()) { input.reportValidity(); return false; } }
-  return checkboxGroupsValid(steps[current]);
+  return checkboxGroupsValid(steps[current]) && validUploads();
+}
+function validUploads() {
+  const fields = [...document.querySelectorAll('#resume, #passport-photo, #nin-slip')];
+  if (!fields.some(field => field.files.length)) return true;
+  const total = fields.reduce((sum, field) => sum + (field.files[0]?.size || 0), 0);
+  const status = document.querySelector('#upload-status');
+  if (total > 10 * 1024 * 1024) { status.textContent = 'Your files are over the 10 MB combined limit. Please upload smaller files.'; return false; }
+  status.textContent = `${(total / 1024 / 1024).toFixed(2)} MB of 10 MB selected.`;
+  return true;
 }
 function render() {
   steps.forEach((step, index) => step.classList.toggle('active', index === current));
@@ -38,5 +47,6 @@ function render() {
 next.addEventListener('click', () => { if (validCurrentStep()) { current++; render(); } });
 back.addEventListener('click', () => { current--; render(); });
 document.querySelector('#reseller-form').addEventListener('submit', event => { if (!validCurrentStep()) event.preventDefault(); });
+document.querySelectorAll('#resume, #passport-photo, #nin-slip').forEach(field => field.addEventListener('change', validUploads));
 document.querySelector('#year').textContent = new Date().getFullYear();
 document.querySelector('#return-url').value = new URL('confirmation.html', window.location.href).href;
